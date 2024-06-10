@@ -4,63 +4,67 @@ Final markdown report
 # 基本設置和Terminal 範例執行成功(Hello word & motion)
 
 1. 開啟電腦終端機(cmd)
-2. 安裝esptool
+2. 查看裝置的COM
+    ```sh
+    MODE
+    ```
+4. 安裝esptool
     ```sh
     pip install esptool
     ```
-3. 克隆 esp-idf：
+5. 克隆 esp-idf：
     ```sh
     git clone --recursive https://github.com/espressif/esp-idf.git
     ```
-4. 切換到 esp-idf 目錄：
+6. 切換到 esp-idf 目錄：
     ```sh
     cd esp-idf
     ```
-5. 安裝開發環境：
+7. 安裝開發環境：
     ```sh
     install
     ```
-6. 配置環境變量：
+8. 配置環境變量：
     ```sh
     export
     ```
-7. 切換到範例目錄：
+9. 切換到範例目錄：
     ```sh
     cd examples\get-started\hello_world
     ```
-8. 設置目標為 ESP32-S3：
+10. 設置目標為 ESP32-S3：
     ```sh
     idf.py set-target esp32s3
     ```
-9. 打開配置菜單：
+11. 打開配置菜單：
     ```sh
     idf.py menuconfig
     ```
-10. 到 Serial flasher config -> 進去 Flash size(點鍵盤右鍵) -> 改成 4MB：
+12. 到 Serial flasher config -> 進去 Flash size(點鍵盤右鍵) -> 改成 4MB：
     <img width="600" alt="image" src="https://github.com/leo0525/esp32-class4-picture/blob/main/setting_flasher_config.png">
     
  
-11. 清除編譯資料
+13. 清除編譯資料
     ```sh
     idf.py fullclean
     ```
-12. 建構編譯資料：
+14. 建構編譯資料：
     ```sh
     idf.py build
     ```
-13. 清除 ESP32-S3 板子上的資料：
+15. 清除 ESP32-S3 板子上的資料：
     ```sh
     esptool.py --chip esp32s3 -p COM6 erase_flash
     ```
-14. 編譯並燒入資料到板子上：
+16. 編譯並燒入資料到板子上：
     ```sh
     idf.py -p COM6 -b 460800 flash
     ```
-15. 顯示在終端上：
+17. 顯示在終端上：
     ```sh
     idf.py monitor
     ```
-16. 成功出現 hello word :
+18. 成功出現 hello word :
     
     <img width="600" alt="image" src="https://github.com/leo0525/esp32-class4-picture/blob/main/hellow_result.png">
     
