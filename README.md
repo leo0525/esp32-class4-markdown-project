@@ -8,7 +8,7 @@ Final markdown report
     ```sh
     pip install esptool
     ```
-3. 克隆 ESP-IDF 倉庫：
+3. 克隆 esp-idf：
     ```sh
     git clone --recursive https://github.com/espressif/esp-idf.git
     ```
@@ -70,42 +70,48 @@ Final markdown report
 
 ## 步驟
 
-1. 切換到目標目錄：
+    
+1. 克隆esp-who：
+    ```sh
+    git clone --recursive https://github.com/espressif/esp-who.git
+    ```
+    
+2. 切換到目標目錄：
     ```sh
     cd C:\Users\leo\esp-idf\examples\get-started\esp-who\examples\motion_detection\lcd
     ```
 
-2. 設置目標為 ESP32-S3：
+3. 設置目標為 ESP32-S3：
     ```sh
     idf.py set-target esp32s3
     ```
 
-3. 清除編譯資料：
+4. 清除編譯資料：
     ```sh
     idf.py fullclean
     ```
 
-4. 編譯：
+5. 編譯：
     ```sh
     idf.py build
     ```
 
-5. 清除 esp32 flash：
+6. 清除 esp32 flash：
     ```sh
     esptool.py --chip esp32s3 -p COM6 erase_flash
     ```
 
-6. 燒錄：
+7. 燒錄：
     ```sh
     idf.py -p COM6 -b 460800 flash
     ```
 
-7. 打開監視器：
+8. 打開監視器：
     ```sh
     idf.py monitor
     ```
 
-8. 測試 motion detection：
+9. 測試 motion detection：
     在鏡頭前揮動手，視窗會顯示 `motion_detection`。
     <img width="600" alt="image" src="https://github.com/leo0525/esp32-class4-picture/blob/main/motion_1.png">    
     
