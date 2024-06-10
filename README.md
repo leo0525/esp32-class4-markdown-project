@@ -170,12 +170,12 @@ Final markdown report
     idf.py set-target esp32s3
     ```
 
-3. 編譯工程：
+3. 編譯：
     ```sh
     idf.py build
     ```
 
-4. 燒錄固件：
+4. 燒錄：
     ```sh
     idf.py flash
     ```
